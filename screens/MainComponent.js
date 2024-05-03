@@ -5,7 +5,7 @@ import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '
 //import { useDispatch } from 'react-redux';
 //import { useEffect } from 'react';
 import Constants from 'expo-constants';
-import logo from '../assets/CarIcon.png';
+import logo from '../assets/SoccerBall.png';
 import HomeScreen from './HomeScreen';
 import DirectionsScreen from './DirectionsScreen';
 import AboutScreen from './AboutScreen';
@@ -94,7 +94,7 @@ const CustomDrawerContent = (props) => {
                     <Image source={logo} style={styles.drawerImage} />
                 </View>
                 <View style={{ flex: 2 }}>
-                    <Text style={styles.drawerHeaderText}>NuCamp</Text>
+                    <Text style={styles.drawerHeaderText}>Soccer</Text>
                 </View>
             </View>
             <DrawerItemList {...props} labelStyle={{ fontWeight: 'bold' }} />
