@@ -9,6 +9,7 @@ import logo from '../assets/SoccerBall.png';
 import HomeScreen from './HomeScreen';
 import DirectionsScreen from './DirectionsScreen';
 import AboutScreen from './AboutScreen';
+import SoccerScreen from './SoccerScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -40,6 +41,29 @@ const HomeNavigator = () => {
     );
 };
 
+const SoccerNavigator = () => {
+    const Stack = createStackNavigator();
+    return (
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen
+                name='Soccer'
+                component={SoccerScreen}
+                options={({ navigation }) => ({
+                    title: 'Soccer',
+                    headerLeft: () => (
+                        <Icon
+                            name='futbol-o'
+                            type='font-awesome'
+                            iconStyle={styles.stackIcon}
+                            onPress={() => navigation.toggleDrawer()}
+                        />
+                    )
+                })}
+            />
+        </Stack.Navigator>
+    );
+};
+
 const AboutNavigator = () => {
     const Stack = createStackNavigator();
     return (
@@ -48,7 +72,7 @@ const AboutNavigator = () => {
                 name='About'
                 component={AboutScreen}
                 options={({ navigation }) => ({
-                    title: 'About Us',
+                    title: 'About Me',
                     headerLeft: () => (
                         <Icon
                             name='info-circle'
@@ -133,10 +157,26 @@ const Main = () => {
                     }}
                 />
                 <Drawer.Screen
+                    name='SoccerDrawer'
+                    component={SoccerNavigator}
+                    options={{
+                        title: 'Soccer',
+                        drawerIcon: ({ color }) => (
+                            <Icon
+                                name='futbol-o'
+                                type='font-awesome'
+                                size={24}
+                                iconStyle={{ width: 24 }}
+                                color={color}
+                            />
+                        )
+                    }}
+                />
+                <Drawer.Screen
                     name='AboutDrawer'
                     component={AboutNavigator}
                     options={{
-                        title: 'About Us',
+                        title: 'About Me',
                         drawerIcon: ({ color }) => (
                             <Icon
                                 name='info-circle'
