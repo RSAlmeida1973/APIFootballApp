@@ -1,6 +1,6 @@
 import { Text } from 'react-native';
-// import { Avatar, ListItem } from "react-native-elements";
 import { Card } from 'react-native-elements';
+//import { Card, Avatar, ListItem } from 'react-native-elements';
 // import { useSelector } from 'react-redux';
 // import { baseUrl } from '../shared/baseUrl';
 // import Loading from '../components/LoadingComponent';
